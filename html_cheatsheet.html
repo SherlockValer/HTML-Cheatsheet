@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive HTML Cheatsheet</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #3498db;
+            margin-top: 25px;
+        }
+        code {
+            background-color: #f7f7f7;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #e74c3c;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .example {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        .note {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #f1c40f;
+            margin: 15px 0;
+        }
+        .best-practice {
+            background-color: #e8f4f8;
+            padding: 10px;
+            border-left: 4px solid #2ecc71;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #e0f7fa;
+            padding: 10px;
+            border-left: 4px solid #00bcd4;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #ffebee;
+            padding: 10px;
+            border-left: 4px solid #f44336;
+            margin: 15px 0;
+        }
+        .toc {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            table {
+                font-size: 14px;
+            }
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comprehensive HTML Cheatsheet</h1>
+    
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#basics">HTML Basics</a></li>
+            <li><a href="#document-structure">Document Structure</a></li>
+            <li><a href="#text-elements">Text Elements</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#images">Images and Media</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#semantic">Semantic Elements</a></li>
+            <li><a href="#structural">Structural Elements</a></li>
+            <li><a href="#meta">Metadata and Head Elements</a></li>
+            <li><a href="#attributes">Global Attributes</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#html5">HTML5 Features</a></li>
+        </ul>
+    </div>
+
+    <div id="structural" class="section">
+        <h2>Structural Elements</h2>
+        
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;div&gt;</code></td>
+                <td>Generic container (block)</td>
+                <td><code>&lt;div class="container"&gt;Content&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;span&gt;</code></td>
+                <td>Generic container (inline)</td>
+                <td><code>&lt;span class="highlight"&gt;Text&lt;/span&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>Line break</td>
+                <td><code>Text&lt;br&gt;New line</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>Horizontal rule (thematic break)</td>
+                <td><code>Section 1&lt;hr&gt;Section 2</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="meta" class="section">
+        <h2>Metadata and Head Elements</h2>
+        
+        <h3>Head Section Structure</h3>
+        <pre>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta name="description" content="Page description"&gt;
+    &lt;meta name="keywords" content="keywords, for, search"&gt;
+    &lt;meta name="author" content="Author Name"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+    &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;</pre>
+        
+        <h3>Common Meta Tags</h3>
+        <table>
+            <tr>
+                <th>Meta Tag</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>charset</code></td>
+                <td>Character encoding</td>
+                <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>viewport</code></td>
+                <td>Responsive design control</td>
+                <td><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>description</code></td>
+                <td>Page description (SEO)</td>
+                <td><code>&lt;meta name="description" content="Page description"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>keywords</code></td>
+                <td>Keywords for search (less important now)</td>
+                <td><code>&lt;meta name="keywords" content="html, css, web"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>author</code></td>
+                <td>Page author</td>
+                <td><code>&lt;meta name="author" content="John Doe"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>robots</code></td>
+                <td>Control search indexing</td>
+                <td><code>&lt;meta name="robots" content="index, follow"&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Open Graph</td>
+                <td>Social media sharing info</td>
+                <td><code>&lt;meta property="og:title" content="Page Title"&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Twitter Card</td>
+                <td>Twitter sharing info</td>
+                <td><code>&lt;meta name="twitter:card" content="summary"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>http-equiv</code></td>
+                <td>HTTP header equivalents</td>
+                <td><code>&lt;meta http-equiv="refresh" content="30"&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Link Types</h3>
+        <table>
+            <tr>
+                <th>Link Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>stylesheet</code></td>
+                <td>Link to CSS file</td>
+                <td><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>icon</code></td>
+                <td>Favicon</td>
+                <td><code>&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>preconnect</code></td>
+                <td>Preemptively connect to domain</td>
+                <td><code>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>preload</code></td>
+                <td>Preload resource</td>
+                <td><code>&lt;link rel="preload" href="font.woff2" as="font"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>canonical</code></td>
+                <td>Preferred URL (SEO)</td>
+                <td><code>&lt;link rel="canonical" href="https://example.com/page"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>alternate</code></td>
+                <td>Alternate version (language, RSS)</td>
+                <td><code>&lt;link rel="alternate" hreflang="es" href="https://es.example.com"&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Script Element</h3>
+        <pre>&lt;script src="script.js" defer&gt;&lt;/script&gt;
+
+&lt;!-- Inline script --&gt;
+&lt;script&gt;
+    function greet() {
+        alert('Hello, world!');
+    }
+&lt;/script&gt;</pre>
+        
+        <div class="best-practice">
+            <p><strong>Best Practice:</strong> Use the <code>defer</code> attribute for scripts that need the DOM, or <code>async</code> for scripts that can run independently.</p>
+        </div>
+    </div>
+
+    <div id="attributes" class="section">
+        <h2>Global Attributes</h2>
+        <p>These attributes can be used on any HTML element.</p>
+        
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>id</code></td>
+                <td>Unique identifier</td>
+                <td><code>&lt;div id="unique-id"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>class</code></td>
+                <td>Class name(s) for CSS/JS</td>
+                <td><code>&lt;div class="container blue"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>style</code></td>
+                <td>Inline CSS styles</td>
+                <td><code>&lt;div style="color: red;"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>title</code></td>
+                <td>Additional information (tooltip)</td>
+                <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>lang</code></td>
+                <td>Language code</td>
+                <td><code>&lt;p lang="fr"&gt;Bonjour&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>hidden</code></td>
+                <td>Hide element</td>
+                <td><code>&lt;div hidden&gt;Not visible&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>dir</code></td>
+                <td>Text direction</td>
+                <td><code>&lt;p dir="rtl"&gt;Right to left&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>tabindex</code></td>
+                <td>Tab order</td>
+                <td><code>&lt;button tabindex="1"&gt;First&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>contenteditable</code></td>
+                <td>Make element editable</td>
+                <td><code>&lt;div contenteditable="true"&gt;Edit me&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>draggable</code></td>
+                <td>Make element draggable</td>
+                <td><code>&lt;div draggable="true"&gt;Drag me&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>data-*</code></td>
+                <td>Custom data attributes</td>
+                <td><code>&lt;div data-user-id="123"&gt;User&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>spellcheck</code></td>
+                <td>Enable/disable spell checking</td>
+                <td><code>&lt;p spellcheck="true"&gt;Check spelling&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>translate</code></td>
+                <td>Whether to translate content</td>
+                <td><code>&lt;p translate="no"&gt;Don't translate&lt;/p&gt;</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="accessibility" class="section">
+        <h2>Accessibility</h2>
+        
+        <h3>ARIA Roles and Attributes</h3>
+        <p>ARIA (Accessible Rich Internet Applications) helps make web content more accessible.</p>
+        
+        <h4>Common ARIA Roles</h4>
+        <table>
+            <tr>
+                <th>Role</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>role="button"</code></td>
+                <td>Identifies element as a button</td>
+                <td><code>&lt;div role="button"&gt;Click me&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>role="navigation"</code></td>
+                <td>Navigation section</td>
+                <td><code>&lt;div role="navigation"&gt;Menu&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>role="main"</code></td>
+                <td>Main content</td>
+                <td><code>&lt;div role="main"&gt;Content&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>role="search"</code></td>
+                <td>Search functionality</td>
+                <td><code>&lt;form role="search"&gt;...&lt;/form&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>role="alert"</code></td>
+                <td>Important, time-sensitive info</td>
+                <td><code>&lt;div role="alert"&gt;Error message&lt;/div&gt;</code></td>
+            </tr>
+        </table>
+        
+        <div class="best-practice">
+            <p><strong>Best Practice:</strong> Use semantic HTML elements when possible instead of ARIA roles.</p>
+        </div>
+        
+        <h4>Common ARIA Attributes</h4>
+        <table>
+            <tr>
+                <th>
+
+    <div id="basics" class="section">
+        <h2>HTML Basics</h2>
+        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages and web applications.</p>
+        
+        <h3>HTML Element Syntax</h3>
+        <pre>&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</pre>
+        
+        <div class="example">
+            <h4>Example:</h4>
+            <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+        </div>
+        
+        <h3>Self-closing Elements</h3>
+        <pre>&lt;tagname attribute="value" /&gt;</pre>
+        
+        <div class="example">
+            <h4>Example:</h4>
+            <pre>&lt;img src="image.jpg" alt="Description" /&gt;</pre>
+        </div>
+        
+        <h3>Comments</h3>
+        <pre>&lt;!-- This is a comment --&gt;</pre>
+    </div>
+
+    <div id="document-structure" class="section">
+        <h2>Document Structure</h2>
+        
+        <h3>Basic HTML Document</h3>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        
+        <div class="note">
+            <p><strong>Note:</strong> The <code>&lt;!DOCTYPE html&gt;</code> declaration tells the browser that the document is HTML5.</p>
+        </div>
+    </div>
+
+    <div id="text-elements" class="section">
+        <h2>Text Elements</h2>
+        
+        <h3>Headings</h3>
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;h1&gt;</code></td>
+                <td>Main heading (most important)</td>
+                <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;h2&gt;</code></td>
+                <td>Secondary heading</td>
+                <td><code>&lt;h2&gt;Subtitle&lt;/h2&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;h3&gt;</code> to <code>&lt;h6&gt;</code></td>
+                <td>Lower-level headings</td>
+                <td><code>&lt;h3&gt;Section Title&lt;/h3&gt;</code></td>
+            </tr>
+        </table>
+        
+        <div class="best-practice">
+            <p><strong>Best Practice:</strong> Use headings in sequential order. Don't skip heading levels (like going from h1 to h3).</p>
+        </div>
+        
+        <h3>Paragraphs and Text Formatting</h3>
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>Paragraph</td>
+                <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;br&gt;</code></td>
+                <td>Line break</td>
+                <td><code>Line 1&lt;br&gt;Line 2</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>Horizontal rule (thematic break)</td>
+                <td><code>&lt;hr&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>Strong importance (typically bold)</td>
+                <td><code>&lt;strong&gt;Important text&lt;/strong&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;em&gt;</code></td>
+                <td>Emphasized text (typically italic)</td>
+                <td><code>&lt;em&gt;Emphasized text&lt;/em&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Highlighted text</td>
+                <td><code>&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;small&gt;</code></td>
+                <td>Smaller text</td>
+                <td><code>&lt;small&gt;Small print&lt;/small&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;del&gt;</code></td>
+                <td>Deleted text</td>
+                <td><code>&lt;del&gt;Deleted text&lt;/del&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;ins&gt;</code></td>
+                <td>Inserted text</td>
+                <td><code>&lt;ins&gt;Inserted text&lt;/ins&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;sub&gt;</code></td>
+                <td>Subscript text</td>
+                <td><code>H<sub>2</sub>O</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;sup&gt;</code></td>
+                <td>Superscript text</td>
+                <td><code>2<sup>10</sup> = 1024</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;code&gt;</code></td>
+                <td>Computer code</td>
+                <td><code>&lt;code&gt;console.log()&lt;/code&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;pre&gt;</code></td>
+                <td>Preformatted text (preserves spaces and line breaks)</td>
+                <td><code>&lt;pre&gt;Code with formatting preserved&lt;/pre&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;blockquote&gt;</code></td>
+                <td>Block quotation</td>
+                <td><code>&lt;blockquote&gt;Quoted text&lt;/blockquote&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;q&gt;</code></td>
+                <td>Inline quotation</td>
+                <td><code>&lt;q&gt;Quoted text&lt;/q&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;abbr&gt;</code></td>
+                <td>Abbreviation</td>
+                <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;cite&gt;</code></td>
+                <td>Citation</td>
+                <td><code>&lt;cite&gt;Book title&lt;/cite&gt;</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="links" class="section">
+        <h2>Links</h2>
+        
+        <h3>Basic Link</h3>
+        <pre>&lt;a href="https://www.example.com"&gt;Link text&lt;/a&gt;</pre>
+        
+        <h3>Link Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>href</code></td>
+                <td>Hyperlink reference (URL)</td>
+                <td><code>&lt;a href="page.html"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>target</code></td>
+                <td>Where to open the linked document</td>
+                <td><code>&lt;a href="page.html" target="_blank"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>rel</code></td>
+                <td>Relationship between current and linked document</td>
+                <td><code>&lt;a href="page.html" rel="nofollow"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>download</code></td>
+                <td>Download the link instead of navigating</td>
+                <td><code>&lt;a href="file.pdf" download&gt;Download&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>title</code></td>
+                <td>Additional information (tooltip)</td>
+                <td><code>&lt;a href="page.html" title="Visit Page"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Link Types</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>Absolute URL</td>
+                <td><code>&lt;a href="https://www.example.com"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Relative URL</td>
+                <td><code>&lt;a href="page.html"&gt;Link&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Email link</td>
+                <td><code>&lt;a href="mailto:email@example.com"&gt;Email&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Phone link</td>
+                <td><code>&lt;a href="tel:+1234567890"&gt;Call&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td>Anchor link (page bookmark)</td>
+                <td><code>&lt;a href="#section-id"&gt;Go to Section&lt;/a&gt;</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="images" class="section">
+        <h2>Images and Media</h2>
+        
+        <h3>Images</h3>
+        <pre>&lt;img src="image.jpg" alt="Description of image"&gt;</pre>
+        
+        <div class="best-practice">
+            <p><strong>Best Practice:</strong> Always include the <code>alt</code> attribute for accessibility. It should describe the content of the image.</p>
+        </div>
+        
+        <h3>Image Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>src</code></td>
+                <td>Source URL of the image</td>
+                <td><code>&lt;img src="image.jpg"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>alt</code></td>
+                <td>Alternative text description</td>
+                <td><code>&lt;img src="image.jpg" alt="Description"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>width</code></td>
+                <td>Width of the image (in pixels)</td>
+                <td><code>&lt;img src="image.jpg" width="300"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>height</code></td>
+                <td>Height of the image (in pixels)</td>
+                <td><code>&lt;img src="image.jpg" height="200"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>loading</code></td>
+                <td>Lazy loading for images</td>
+                <td><code>&lt;img src="image.jpg" loading="lazy"&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Image Maps</h3>
+        <pre>&lt;img src="image.jpg" alt="Map" usemap="#mapname"&gt;
+&lt;map name="mapname"&gt;
+    &lt;area shape="rect" coords="x1,y1,x2,y2" href="url1" alt="Link 1"&gt;
+    &lt;area shape="circle" coords="x,y,radius" href="url2" alt="Link 2"&gt;
+&lt;/map&gt;</pre>
+        
+        <h3>Picture Element</h3>
+        <pre>&lt;picture&gt;
+    &lt;source media="(min-width: 650px)" srcset="large.jpg"&gt;
+    &lt;source media="(min-width: 450px)" srcset="medium.jpg"&gt;
+    &lt;img src="small.jpg" alt="Description"&gt;
+&lt;/picture&gt;</pre>
+        
+        <h3>Audio</h3>
+        <pre>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</pre>
+        
+        <h3>Video</h3>
+        <pre>&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;</pre>
+        
+        <h3>Embedding Content</h3>
+        <pre>&lt;iframe src="https://www.example.com" width="500" height="300"&gt;&lt;/iframe&gt;</pre>
+    </div>
+
+    <div id="lists" class="section">
+        <h2>Lists</h2>
+        
+        <h3>Unordered List</h3>
+        <pre>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        
+        <h3>Ordered List</h3>
+        <pre>&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        
+        <h3>Ordered List Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>type</code></td>
+                <td>Numbering type (1, A, a, I, i)</td>
+                <td><code>&lt;ol type="A"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>start</code></td>
+                <td>Starting number</td>
+                <td><code>&lt;ol start="10"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>reversed</code></td>
+                <td>Reverse order</td>
+                <td><code>&lt;ol reversed&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Description List</h3>
+        <pre>&lt;dl&gt;
+    &lt;dt&gt;Term 1&lt;/dt&gt;
+    &lt;dd&gt;Definition 1&lt;/dd&gt;
+    &lt;dt&gt;Term 2&lt;/dt&gt;
+    &lt;dd&gt;Definition 2&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+        
+        <h3>Nested Lists</h3>
+        <pre>&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2
+        &lt;ul&gt;
+            &lt;li&gt;Subitem 2.1&lt;/li&gt;
+            &lt;li&gt;Subitem 2.2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    </div>
+
+    <div id="tables" class="section">
+        <h2>Tables</h2>
+        
+        <h3>Basic Table Structure</h3>
+        <pre>&lt;table&gt;
+    &lt;caption&gt;Table Caption&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Header 1&lt;/th&gt;
+            &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+            &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Row 2, Cell 1&lt;/td&gt;
+            &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Footer 1&lt;/td&gt;
+            &lt;td&gt;Footer 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+        
+        <h3>Table Cell Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>colspan</code></td>
+                <td>Number of columns a cell should span</td>
+                <td><code>&lt;td colspan="2"&gt;Content&lt;/td&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>rowspan</code></td>
+                <td>Number of rows a cell should span</td>
+                <td><code>&lt;td rowspan="3"&gt;Content&lt;/td&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>headers</code></td>
+                <td>Associates data cells with header cells</td>
+                <td><code>&lt;td headers="header-id"&gt;Content&lt;/td&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Table Element Roles</h3>
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code>&lt;caption&gt;</code></td>
+                <td>Table caption/title</td>
+            </tr>
+            <tr>
+                <td><code>&lt;thead&gt;</code></td>
+                <td>Groups header content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tbody&gt;</code></td>
+                <td>Groups body content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tfoot&gt;</code></td>
+                <td>Groups footer content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;tr&gt;</code></td>
+                <td>Table row</td>
+            </tr>
+            <tr>
+                <td><code>&lt;th&gt;</code></td>
+                <td>Table header cell</td>
+            </tr>
+            <tr>
+                <td><code>&lt;td&gt;</code></td>
+                <td>Table data cell</td>
+            </tr>
+            <tr>
+                <td><code>&lt;colgroup&gt;</code></td>
+                <td>Groups columns for formatting</td>
+            </tr>
+            <tr>
+                <td><code>&lt;col&gt;</code></td>
+                <td>Specifies properties for columns</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="forms" class="section">
+        <h2>Forms</h2>
+        
+        <h3>Basic Form Structure</h3>
+        <pre>&lt;form action="/submit" method="post"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Form Section&lt;/legend&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" required&gt;
+        
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+        
+        <h3>Form Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>action</code></td>
+                <td>URL where form data is sent</td>
+                <td><code>&lt;form action="/submit"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>method</code></td>
+                <td>HTTP method (get or post)</td>
+                <td><code>&lt;form method="post"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>enctype</code></td>
+                <td>How form data is encoded</td>
+                <td><code>&lt;form enctype="multipart/form-data"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>autocomplete</code></td>
+                <td>Enable/disable autocomplete</td>
+                <td><code>&lt;form autocomplete="off"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>novalidate</code></td>
+                <td>Disable browser validation</td>
+                <td><code>&lt;form novalidate&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Input Types</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>text</code></td>
+                <td>Single-line text input</td>
+                <td><code>&lt;input type="text"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>password</code></td>
+                <td>Password field</td>
+                <td><code>&lt;input type="password"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>email</code></td>
+                <td>Email input</td>
+                <td><code>&lt;input type="email"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>number</code></td>
+                <td>Numeric input</td>
+                <td><code>&lt;input type="number" min="1" max="100"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>tel</code></td>
+                <td>Telephone number input</td>
+                <td><code>&lt;input type="tel"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>date</code></td>
+                <td>Date picker</td>
+                <td><code>&lt;input type="date"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>time</code></td>
+                <td>Time picker</td>
+                <td><code>&lt;input type="time"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>datetime-local</code></td>
+                <td>Date and time picker</td>
+                <td><code>&lt;input type="datetime-local"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>month</code></td>
+                <td>Month picker</td>
+                <td><code>&lt;input type="month"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>week</code></td>
+                <td>Week picker</td>
+                <td><code>&lt;input type="week"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>color</code></td>
+                <td>Color picker</td>
+                <td><code>&lt;input type="color"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>range</code></td>
+                <td>Slider control</td>
+                <td><code>&lt;input type="range" min="0" max="100"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>file</code></td>
+                <td>File upload</td>
+                <td><code>&lt;input type="file" accept=".jpg,.png"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>search</code></td>
+                <td>Search field</td>
+                <td><code>&lt;input type="search"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>url</code></td>
+                <td>URL input</td>
+                <td><code>&lt;input type="url"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>checkbox</code></td>
+                <td>Checkbox</td>
+                <td><code>&lt;input type="checkbox" checked&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>radio</code></td>
+                <td>Radio button</td>
+                <td><code>&lt;input type="radio" name="option"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>hidden</code></td>
+                <td>Hidden field</td>
+                <td><code>&lt;input type="hidden" name="user_id" value="123"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>submit</code></td>
+                <td>Submit button</td>
+                <td><code>&lt;input type="submit" value="Submit"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>reset</code></td>
+                <td>Reset button</td>
+                <td><code>&lt;input type="reset" value="Reset"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>button</code></td>
+                <td>Generic button</td>
+                <td><code>&lt;input type="button" value="Click Me"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>image</code></td>
+                <td>Image as submit button</td>
+                <td><code>&lt;input type="image" src="button.png" alt="Submit"&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Input Attributes</h3>
+        <table>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>name</code></td>
+                <td>Name of the input (for form submission)</td>
+                <td><code>&lt;input name="username"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>value</code></td>
+                <td>Default value</td>
+                <td><code>&lt;input value="Default text"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>placeholder</code></td>
+                <td>Hint text displayed when field is empty</td>
+                <td><code>&lt;input placeholder="Enter username"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>required</code></td>
+                <td>Makes field required</td>
+                <td><code>&lt;input required&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>disabled</code></td>
+                <td>Disables the input</td>
+                <td><code>&lt;input disabled&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>readonly</code></td>
+                <td>Makes field read-only</td>
+                <td><code>&lt;input readonly&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>autocomplete</code></td>
+                <td>Controls autocomplete feature</td>
+                <td><code>&lt;input autocomplete="off"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>autofocus</code></td>
+                <td>Auto-focuses on page load</td>
+                <td><code>&lt;input autofocus&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>min</code>, <code>max</code></td>
+                <td>Minimum and maximum values</td>
+                <td><code>&lt;input type="number" min="1" max="100"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>step</code></td>
+                <td>Increment step for number inputs</td>
+                <td><code>&lt;input type="number" step="0.5"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>pattern</code></td>
+                <td>Regular expression pattern for validation</td>
+                <td><code>&lt;input pattern="[A-Za-z0-9]+"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>maxlength</code></td>
+                <td>Maximum number of characters</td>
+                <td><code>&lt;input maxlength="50"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>minlength</code></td>
+                <td>Minimum number of characters</td>
+                <td><code>&lt;input minlength="8"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>accept</code></td>
+                <td>File types accepted (for file input)</td>
+                <td><code>&lt;input type="file" accept=".jpg,.png"&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>multiple</code></td>
+                <td>Allow multiple values</td>
+                <td><code>&lt;input type="file" multiple&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>form</code></td>
+                <td>Associates input with form (using form ID)</td>
+                <td><code>&lt;input form="form-id"&gt;</code></td>
+            </tr>
+        </table>
+        
+        <h3>Other Form Elements</h3>
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;textarea&gt;</code></td>
+                <td>Multi-line text input</td>
+                <td><code>&lt;textarea rows="4" cols="50"&gt;Default text&lt;/textarea&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;select&gt;</code></td>
+                <td>Dropdown list</td>
+                <td><code>&lt;select name="options"&gt;<br>&lt;option value="1"&gt;Option 1&lt;/option&gt;<br>&lt;option value="2"&gt;Option 2&lt;/option&gt;<br>&lt;/select&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;optgroup&gt;</code></td>
+                <td>Group of options in dropdown</td>
+                <td><code>&lt;optgroup label="Group 1"&gt;<br>&lt;option value="1"&gt;Option 1&lt;/option&gt;<br>&lt;/optgroup&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;datalist&gt;</code></td>
+                <td>Predefined options for input</td>
+                <td><code>&lt;input list="browsers"&gt;<br>&lt;datalist id="browsers"&gt;<br>&lt;option value="Chrome"&gt;<br>&lt;option value="Firefox"&gt;<br>&lt;/datalist&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;button&gt;</code></td>
+                <td>Clickable button</td>
+                <td><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;output&gt;</code></td>
+                <td>Display calculation result</td>
+                <td><code>&lt;output name="result" for="a b"&gt;0&lt;/output&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;progress&gt;</code></td>
+                <td>Progress indicator</td>
+                <td><code>&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;meter&gt;</code></td>
+                <td>Scalar measurement within range</td>
+                <td><code>&lt;meter value="0.6" min="0" max="1"&gt;60%&lt;/meter&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;fieldset&gt;</code></td>
+                <td>Group related form elements</td>
+                <td><code>&lt;fieldset&gt;<br>&lt;legend&gt;Personal Info&lt;/legend&gt;<br><!-- form elements --><br>&lt;/fieldset&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;legend&gt;</code></td>
+                <td>Caption for fieldset</td>
+                <td><code>&lt;legend&gt;Personal Info&lt;/legend&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;label&gt;</code></td>
+                <td>Label for form control</td>
+                <td><code>&lt;label for="email"&gt;Email:&lt;/label&gt;</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="semantic" class="section">
+        <h2>Semantic Elements</h2>
+        
+        <div class="note">
+            <p><strong>Note:</strong> Semantic elements clearly describe their meaning in a human- and machine-readable way.</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><code>&lt;article&gt;</code></td>
+                <td>Independent, self-contained content</td>
+                <td><code>&lt;article&gt;Blog post content&lt;/article&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;section&gt;</code></td>
+                <td>Thematic grouping of content</td>
+                <td><code>&lt;section&gt;Related content&lt;/section&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;header&gt;</code></td>
+                <td>Introductory content or navigation</td>
+                <td><code>&lt;header&gt;Site logo and navigation&lt;/header&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Footer for document or section</td>
+                <td><code>&lt;footer&gt;Copyright info&lt;/footer&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Navigation links</td>
+                <td><code>&lt;nav&gt;Menu links&lt;/nav&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>Content tangentially related</td>
+                <td><code>&lt;aside&gt;Sidebar content&lt;/aside&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;main&gt;</code></td>
+                <td>Main content of document</td>
+                <td><code>&lt;main&gt;Primary content&lt;/main&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;figure&gt;</code></td>
+                <td>Self-contained content (images, diagrams)</td>
+                <td><code>&lt;figure&gt;<br>&lt;img src="image.jpg" alt="Description"&gt;<br>&lt;figcaption&gt;Caption&lt;/figcaption&gt;<br>&lt;/figure&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;figcaption&gt;</code></td>
+                <td>Caption for figure</td>
+                <td><code>&lt;figcaption&gt;Figure caption&lt;/figcaption&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;time&gt;</code></td>
+                <td>Time or date</td>
+                <td><code>&lt;time datetime="2023-09-15"&gt;September 15&lt;/time&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Highlighted text</td>
+                <td><code>&lt;mark&gt;Highlighted text&lt;/mark&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;details&gt;</code></td>
+                <td>Disclosure widget</td>
+                <td><code>&lt;details&gt;<br>&lt;summary&gt;Title&lt;/summary&gt;<br>Hidden content<br>&lt;/details&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;summary&gt;</code></td>
+                <td>Visible heading for details</td>
+                <td><code>&lt;summary&gt;Click to expand&lt;/summary&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;address&gt;</code></td>
+                <td>Contact information</td>
+                <td><code>&lt;address&gt;Contact info&lt;/address&gt;</code></td>
+            </tr>
+        </table>
+    </div>
+                
